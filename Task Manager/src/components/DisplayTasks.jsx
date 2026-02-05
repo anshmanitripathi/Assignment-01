@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTasks } from '../context/TaskContext';
 import TaskItem from './TaskItem';
+import { useMemo } from 'react';  
 
 function DisplayTasks(){
     const { tasks, dispatch } = useTasks(); 

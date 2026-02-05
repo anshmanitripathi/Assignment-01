@@ -42,4 +42,4 @@ function TaskItem({ task, dispatch }) {
     );
 }
 
-export default TaskItem;
+export default React.memo(TaskItem);
