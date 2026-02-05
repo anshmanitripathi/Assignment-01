@@ -46,9 +46,10 @@ export const TaskProvider = ({ children }) => {
     
   const [state, dispatch] = useReducer(taskReducer, initialState);
   const [filter, setFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
   return (
-    <TaskContext.Provider value={{ tasks: state.tasks, dispatch, filter, setFilter }}>
+    <TaskContext.Provider value={{ tasks: state.tasks, dispatch, filter, setFilter, searchQuery, setSearchQuery }}>
       {children}
     </TaskContext.Provider>
   );

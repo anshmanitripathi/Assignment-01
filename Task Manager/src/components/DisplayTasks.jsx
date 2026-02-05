@@ -6,12 +6,12 @@ import { useMemo } from 'react';
 function DisplayTasks(){
     const { tasks, dispatch } = useTasks(); 
     const {filter} = useTasks();
+    const {searchQuery} = useTasks();
 
     const filteredTasks = tasks.filter(task => {
-    if (filter === 'completed') return task.completed;
-    if (filter === 'pending') return !task.completed;
-    return true;
-
+        const matchesFilter = filter === 'all' || (filter === 'completed' && task.completed) || (filter === 'pending' && !task.completed);
+        const matchesSearch = task.text.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesFilter && matchesSearch;
   });
 
   return (
