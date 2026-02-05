@@ -3,7 +3,7 @@ import { useTasks } from '../context/TaskContext';
 
 
 function Navbar(){
-
+  
     const { setFilter, setSearchQuery , searchQuery} = useTasks();
   return (
     <div>
